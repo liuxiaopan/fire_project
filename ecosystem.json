@@ -1,0 +1,28 @@
+{
+	"apps":[{
+		"name": "Fire",
+		"script": "server.js",
+		"env": {
+			"COMMON_VARIBLE": "true"
+		},
+		"env_production": {
+			"NODE_ENV": "env_production"
+		}
+	}],
+	"deploy": {
+		"production": {
+			"user": "linda",
+			"host": ["120.26..235.4"],
+			"port": "39999",
+			"ref": "origin/master",
+			"repo": "git@github.com:liuxiaopan/fire_project.git",
+			"path": "www/fire/production",
+			"ssh_options": "StrictHostChecking=no",
+			"pre-deploy-local": "echo 'Deploy Done!'",
+			"env": {
+				"NODE_ENV": "production"
+			}
+		
+		}
+	}
+}
